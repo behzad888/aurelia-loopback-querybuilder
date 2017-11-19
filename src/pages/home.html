@@ -1,3 +1,84 @@
 <template>
-Home
+    <div class="container">
+        <div class="col-md-12 col-lg-10 col-lg-offset-1">
+            <div class="page-header">
+
+                <h1>jQuery QueryBuilder
+                    <small>Example</small>
+                </h1>
+            </div>
+
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button> You must execute <code>bower install</code> in the example directory to run this demo.
+            </div>
+
+            <div class="well well-sm">
+                <label>Theme:</label>
+                <div class="btn-group">
+                    <button class="btn btn-primary btn-sm change-theme" data-qb="../dist/css/query-builder.default.min.css" data-bt="../bower_components/bootstrap/dist/css/bootstrap.min.css">Default
+        </button>
+                    <button class="btn btn-primary btn-sm change-theme" data-qb="../dist/css/query-builder.dark.min.css" data-bt="bower_components/bootswatch-dist/css/bootstrap.min.css">Dark
+        </button>
+                </div>
+
+                <label>Language:</label>
+                <select name="language" class="selectpicker show-tick show-menu-arrow" data-width="auto">
+        <option value="sq" data-icon="flag flag-al">Albanian</option>
+        <option value="ar" data-icon="flag flag-ar">Arabic</option>
+        <option value="az" data-icon="flag flag-az">Azerbaijani</option>
+        <option value="bg" data-icon="flag flag-bg">Bulgarian</option>
+        <option value="zh-CN" data-icon="flag flag-zh-CN">Simplified Chinese</option>
+        <option value="cs" data-icon="flag flag-cs">Czech</option>
+        <option value="de" data-icon="flag flag-de">German</option>
+        <option value="da" data-icon="flag flag-dk">Danish</option>
+        <option value="nl" data-icon="flag flag-nl">Dutch</option>
+        <option value="en" data-icon="flag flag-gb" selected>English</option>
+        <option value="fa-IR" data-icon="flag flag-ir">Farsi</option>
+        <option value="fr" data-icon="flag flag-fr">French</option>
+        <option value="el" data-icon="flag flag-el">Greek</option>
+        <option value="he" data-icon="flag flag-he">Hebrew</option>
+        <option value="it" data-icon="flag flag-it">Italian</option>
+        <option value="no" data-icon="flag flag-no">Norwegian</option>
+        <option value="pl" data-icon="flag flag-pl">Polish</option>
+        <option value="pt-PT" data-icon="flag flag-pt-PT">Portuguese</option>
+        <option value="pt-BR" data-icon="flag flag-pt-BR">Brazilian Portuguese</option>
+        <option value="ro" data-icon="flag flag-ro">Romanian</option>
+        <option value="ru" data-icon="flag flag-ru">Russian</option>
+        <option value="es" data-icon="flag flag-es">Spanish</option>
+        <option value="tr" data-icon="flag flag-tr">Turkish</option>
+        <option value="ua" data-icon="flag flag-ua">Ukrainian</option>
+      </select>
+            </div>
+
+            <div id="builder"></div>
+
+            <div class="btn-group">
+                <button class="btn btn-danger reset">Reset</button>
+                <button class="btn btn-warning set-filters" data-toggle="tooltip" data-container="body" data-placement="bottom" title="Adds a filter 'New filter' and removes 'Coordinates', 'State', 'BSON'">Set filters
+      </button>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-default" disabled>Set:</button>
+                <button class="btn btn-success set">From JSON</button>
+                <button class="btn btn-success set-mongo">From MongoDB</button>
+                <button class="btn btn-success set-sql">From SQL</button>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-default" disabled>Get:</button>
+                <button class="btn btn-primary parse-json">JSON</button>
+                <button class="btn btn-primary parse-sql" data-stmt="false">SQL</button>
+                <button class="btn btn-primary parse-sql" data-stmt="question_mark">SQL statement</button>
+                <button class="btn btn-primary parse-mongo">MongoDB</button>
+            </div>
+
+            <div id="result" class="hide">
+                <h3>Output</h3>
+                <pre></pre>
+            </div>
+        </div>
+    </div>
 </template>
